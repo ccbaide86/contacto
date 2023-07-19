@@ -1,46 +1,82 @@
+import 'package:contacto/widgets/rows.dart';
 import 'package:flutter/material.dart';
 
 class RowsCard extends StatelessWidget {
   const RowsCard({super.key});
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return const Card(
       child: Padding(
-        padding: EdgeInsets.all(18.0),
+        padding: EdgeInsets.symmetric(vertical: 18.0),
         child: Column(
           children: [
-            Row(
-              children: [Text('Información de contacto'),],
+            Padding(
+              padding: EdgeInsets.only(bottom: 9, left: 11),
+              child: Row(
+                children: [
+                  Text('Informacion de contactos'),
+                ],
+              ),
             ),
             Row(
-              children: [Icon(Icons.phone_outlined), 
-                        Column(
-                          children: [
-                            Text('+504 9902-9311'),
-                            Text('Celular'),],
-                        ),
-                        Icon(Icons.message_outlined), 
-                        Icon(Icons.video_call_outlined),],
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 9, right: 20),
+                  child: Icon(Icons.phone_outlined, size: 30),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      "9902-9311",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 118, 118, 118),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      "Celular",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 118, 118, 118),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+                Spacer(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(
+                        Icons.video_call_outlined,
+                        size: 30,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Icon(
+                        Icons.message_outlined,
+                        size: 30,
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
-            Row(
-              children: [Icon(Icons.mail),Text('Enviar mensaje a +504 9902-9311'),],
+            SizedBox(
+              height: 8,
             ),
-            Row(
-              children: [Icon(Icons.mail),Text('Llamar a +504 9902-9311'),],
-            ),
-            Row(
-              children: [Icon(Icons.mail),Text('Videollamar a +504 9902-9311'),],
-            ),
-            Row(
-              children: [Icon(Icons.comment),Text('Mensaje al +50499029311'),],
-            ),
-            Row(
-              children: [Icon(Icons.comment),Text('Llamada de voz al +50499029311'),],
-            ),
-            Row(
-              children: [Icon(Icons.comment),Text('Videollamada al +50499029311'),],
-            ),
+            Rows()
           ],
         ),
       ),

@@ -1,5 +1,5 @@
 import "package:contacto/pages/card.dart";
-import "package:contacto/widgets/iconos.dart";
+import 'package:contacto/widgets/icons.dart';
 import "package:flutter/material.dart";
 
 class HomePage extends StatefulWidget {
